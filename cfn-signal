@@ -1,3 +1,4 @@
 #!/bin/bash
 
-/usr/local/bin/cfn-signal -e 0 -r $CFN_REASON $CFN_HANDLE
+/usr/local/bin/cfn-init -v -e 0 --resource $CFN_RESOURCE --stack $CFN_STACK
+/usr/local/bin/cfn-signal -v -e 0 --resource $CFN_RESOURCE --stack $CFN_STACK
